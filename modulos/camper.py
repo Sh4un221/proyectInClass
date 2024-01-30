@@ -1,4 +1,5 @@
 import os
+from .variables import save,getAll
 def create():
     os.system("cls")
     print("""
@@ -6,14 +7,24 @@ def create():
         **** FORMULARIO CAMPER ****
         ***************************
         """)
-    camper={
+    save({
         "Nombre":input("Ingrese el nombre del camper: "),
         "Apellido":input("Ingrese el apellido del camper: "),
         "Edad":int(input("Ingrese la edad del camper: "))
-    }
+    })
+    os.system('pause')
+ 
     
 def read():
-    print("Datos del camper encontrados")
+    print("""
+    *************************
+    **** TABLA DE CAMPER ****
+    *************************
+    """)
+    plantilla=""
+    for i,val in getAll().items():
+        pass
+    os.system('pause')
     
 def update():
     print("el camper se actualizo")
