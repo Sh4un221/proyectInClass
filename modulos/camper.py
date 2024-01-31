@@ -70,15 +70,25 @@ def update():
             
                 match(opc):
                     case 1: 
-                        informacion={
+                        val={
                             "Nombre":input("Ingrese el nombre del camper: "),
                             "Apellido":input("Ingrese el apellido del camper: "),
                             "Edad":int(input("Ingrese la edad del camper: ")),
                             "Genero":input("Ingrese el genero del camper: ")
                         }
-                        camper[codigo-1]=informacion
-                        bandera=False
+                        camper[codigo-1]=val
+                        print(f"""
+                        El camper fue actualizado
+                        ________________________________
+                        Codigo:{codigo}
+                        Nombre:{val.get('Nombre')}
+                        Apellido:{val.get('Apellido')}
+                        Edad:{val.get('Edad')}
+                        Genero:{val.get('Genero')}
+                        _______________________________
+                        """)
                         os.system('pause')
+                        bandera=False
                     case 3:
                         bandera=False
                     
