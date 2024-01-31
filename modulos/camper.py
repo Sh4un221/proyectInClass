@@ -52,44 +52,44 @@ def update():
     print("el camper se actualizo")
     
 def delete():
-        print("""
-        ***************************
-        ***** ELIMINAR CAMPER *****
-        ***************************
-        """)
-        
-        codigo=int(input("Cual es el codigo del camper que desea eliminar?: \n"))
-        read(codigo)
         bandera=True
         while(bandera):
-            os.system('cls')
-            print("""
-            ¿Esta seguro que desea eliminar el camper?
-            1.Si
-            2.No
-            3.Cancelar      
+                print("""
+            ***************************
+            ***** ELIMINAR CAMPER *****
+            ***************************
             """)
-            opc=int(input())
             
-            match(opc):
-                case 1: 
-                    val=camper.pop(codigo-1)
-                    os.system('cls')
-                    print(f"""
-                    El camper fue eliminado
-                    ________________________________
-                    Codigo:{codigo}
-                    Nombre:{val.get('Nombre')}
-                    Apellido:{val.get('Apellido')}
-                    Edad:{val.get('Edad')}
-                    Genero:{val.get('Genero')}
-                    _______________________________
-                    """)
-                    os.system('pause')
-                    bandera=False
+                codigo=int(input("Cual es el codigo del camper que desea eliminar?: \n"))
+                read(codigo)
                 
-                case 3:
-                    bandera=False
+                print("""
+                ¿Esta seguro que desea eliminar el camper?
+                1.Si
+                2.No
+                3.Cancelar      
+                """)
+                opc=int(input())
+            
+                match(opc):
+                    case 1: 
+                        val=camper.pop(codigo-1)
+                        os.system('cls')
+                        print(f"""
+                        El camper fue eliminado
+                        ________________________________
+                        Codigo:{codigo}
+                        Nombre:{val.get('Nombre')}
+                        Apellido:{val.get('Apellido')}
+                        Edad:{val.get('Edad')}
+                        Genero:{val.get('Genero')}
+                        _______________________________
+                        """)
+                        os.system('pause')
+                        bandera=False
+                    
+                    case 3:
+                        bandera=False
             
 def menu():
     menu=["Guardar","Buscar","Actualizar","Eliminar","Salir"]
