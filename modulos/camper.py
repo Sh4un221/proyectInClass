@@ -46,14 +46,48 @@ def read(codigo=None):
         _______________________________
         """)
     os.system('pause')
-    
-    
+     
 def update():
-    print("el camper se actualizo")
+    
+        bandera=True
+        while(bandera):
+                read()
+                print("""
+            *****************************
+            ***** ACTUALIZAR CAMPER *****
+            *****************************
+            """)
+            
+                codigo=int(input("Cual es el codigo del camper que desea actualuzar?: \n"))
+                read(codigo)
+                print("""
+                ¿Esta seguro que desea eliminar el camper?
+                1.Si
+                2.No
+                3.Cancelar      
+                """)
+                opc=int(input())
+            
+                match(opc):
+                    case 1: 
+                        informacion={
+                            "Nombre":input("Ingrese el nombre del camper: "),
+                            "Apellido":input("Ingrese el apellido del camper: "),
+                            "Edad":int(input("Ingrese la edad del camper: ")),
+                            "Genero":input("Ingrese el genero del camper: ")
+                        }
+                        camper[codigo-1]=informacion
+                        bandera=False
+                        os.system('pause')
+                    case 3:
+                        bandera=False
+                    
+        print("el camper se actualizo")
     
 def delete():
         bandera=True
         while(bandera):
+                read()
                 print("""
             ***************************
             ***** ELIMINAR CAMPER *****
